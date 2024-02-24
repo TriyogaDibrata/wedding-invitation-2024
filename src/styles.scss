@@ -6,3 +6,27 @@
 .active-link {
     @apply text-blue-500;
 }
+
+.dataTables_wrapper .dataTables_length select {
+    @apply w-16;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    @apply border border-gray-200 text-sm rounded-md m-4 py-2 px-2 #{!important};
+}
+
+.dataTables_wrapper .dataTables_info {
+    @apply m-4 pt-4 text-sm #{!important};
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    @apply bg-indigo-500 text-white border-none rounded-lg #{!important};
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    @apply bg-indigo-300 text-white border-none rounded-lg #{!important};
+}
+
+.card {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}

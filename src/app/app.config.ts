@@ -2,9 +2,11 @@ import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { DataTablesModule } from 'angular-datatables';
+import { HeaderInterceptor } from './interceptors/header.interceptor';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -22,7 +24,13 @@ export const provideTranslation = () => ({
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes), 
-    provideHttpClient(),
-    TranslateModule.forRoot(provideTranslation()).providers!
+    provideHttpClient(withInterceptorsFromDi()),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HeaderInterceptor,
+      multi: true
+    },
+    TranslateModule.forRoot(provideTranslation()).providers!,
+    DataTablesModule
   ]
 };
