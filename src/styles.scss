@@ -3,6 +3,42 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+    font-family: 'Alice';
+    src: url('assets/fonts/alice/Alice-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Alta';
+    src: url('assets/fonts/alta/Alta_regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Liana';
+    src: url('assets/fonts/liana/Liana.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.alice {
+    font-family: 'Alice';
+}
+
+.alta {
+    font-family: 'Alta';
+}
+
+.liana {
+    font-family: "Liana"
+}
+
+
 .active-link {
     @apply text-blue-500;
 }

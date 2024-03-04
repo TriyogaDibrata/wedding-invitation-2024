@@ -1,95 +1,432 @@
-<section id="hero" class="bg-white">
-    <div class="md:grid-cols-2 md:grid">
-        <div class="w-full h-[50vh] md:h-screen bg-red-500">
-
-            <div id="default-carousel" class="relative w-full" data-carousel="slide">
-                <!-- Carousel wrapper -->
-                <div class="relative h-[50vh] overflow-hidden md:h-screen">
-                    <!-- Item 1 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://picsum.photos/200" class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://picsum.photos/200" class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://picsum.photos/200" class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                    </div>
-                    <!-- Item 4 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://picsum.photos/200" class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                    </div>
-                    <!-- Item 5 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://picsum.photos/200" class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+<div class="bg-[url('assets/images/bg.png')] bg-repeat-y bg-contain">
+    <section id="hero" class=" bg-no-repeat bg-cover text-rustic-gold">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+            <!-- carousel -->
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <div id="default-carousel" class="relative" data-carousel="slide">
+                    <div class="relative h-[320px] overflow-hidden rounded-none md:h-[580px]">
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item
+                            *ngFor="let images of heroImages">
+                            <img [src]="images.url"
+                                class="absolute h-full object-cover block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
+                        </div>
                     </div>
                 </div>
             </div>
-
+            <!-- title -->
+            <div class="px-16 py-10">
+                <div class="flex flex-col gap-4 items-center md:items-start">
+                    <div class="flex w-full justify-center" data-aos="fade-up" data-aos-duration="1000">
+                        <img class="h-32 w-32" src="assets/images/wed-logo.png" />
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <div class="alice text-lg text-center md:text-start" data-aos="fade-up" data-aos-duration="1000">{{ "hero.wedding" | translate }}</div>
+                        <div class="flex flex-col items-center gap-2 md:flex-row" data-aos="fade-up" data-aos-duration="1000">
+                            <h1 class="text-6xl alta">Andre</h1>
+                            <span class="liana text-2xl">{{ "hero.and" | translate }}</span>
+                            <h1 class="text-6xl alta">Maria</h1>
+                        </div>
+                    </div>
+                    <div class="alice text-xl mt-5 mb-2" data-aos="fade-up" data-aos-duration="1000">{{ "hero.date" | translate }}</div>
+                    <div class="alice text-2xl font-bold" data-aos="fade-up" data-aos-duration="1000">{{ "hero.save_the_date" | translate }}</div>
+                    <div class="flex flex-row gap-2 alice text-3xl" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="flex flex-col items-center">
+                            <div>{{ days ? days : '0' | number: '0.0-0'}}</div>
+                            <span class="text-base">{{ "hero.days" | translate}}</span>
+                        </div>
+                        <div>:</div>
+                        <div class="flex flex-col items-center">
+                            <div>{{ hours ? hours : '0' }}</div>
+                            <span class="text-base">{{ "hero.hours" | translate }}</span>
+                        </div>
+                        <div>:</div>
+                        <div class="flex flex-col items-center">
+                            <div>{{ minutes ? minutes : '0' }}</div>
+                            <span class="text-base">{{ "hero.minutes" | translate }}</span>
+                        </div>
+                        <div>:</div>
+                        <div class="flex flex-col items-center">
+                            <div>{{ seconds ? seconds : '0' }}</div>
+                            <span class="text-base">{{ "hero.seconds" | translate }}</span>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="1000">
+                        <a [href]="calendar_url" target="_blank"
+                            class="alice bg-rustic-gold text-white text-sm py-2 px-3 rounded-sm hover:bg-lime-900">{{
+                            "hero.add_to_calendar" | translate }}</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="w-full p-4 h-[50vh] md:h-screen bg-[url('assets/images/bg.png')] bg-no-repeat bg-center bg-cover">
-            <div class="h-full w-full flex justify-center items-center">
-                {{ 'title' | translate }}
+    </section>
+
+    <section id="quotes" class=" px-4 py-10 bg-no-repeat bg-cover text-rustic-gold">
+        <div class="container mx-auto bg-white bg-opacity-50 p-10 rounded-md flex flex-col items-center" data-aos="fade-up" data-aos-duration="1000">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <img class="h-40 w-40" src="assets/images/hands.png" />
+            </div>
+            <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                <p class="alice italic text-xl">“{{ "quotes.quotes" | translate }}"</p>
+            </div>
+            <div class="text-center pt-4" data-aos="fade-up" data-aos-duration="1000">
+                <p class="alice text-xl">({{ "quotes.bible" | translate }})</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ceremony" class=" px-4 py-10 bg-no-repeat bg-cover text-rustic-gold">
+        <div class="container mx-auto bg-white bg-opacity-50 px-10 py-20 rounded-md flex flex-col items-center" data-aos="fade-up" data-aos-duration="1000">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <img class="h-24 w-24" src="assets/images/rings.png" />
+            </div>
+            <div class="text-center pt-5" data-aos="fade-up" data-aos-duration="1000">
+                <p class="alice text-lg">{{ "ceremony.greetings" | translate }}</p>
+            </div>
+            <div class="flex items-center flex-col gap-2 py-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="alice text-3xl tracking-widest">{{ "ceremony.dates.may" | translate }}</div>
+                <div class="flex flex-row items-center gap-2">
+                    <div class="alice text-xl sm:text-2xl w-[120px] text-end tracking-widest">{{
+                        "ceremony.dates.saturday" |
+                        translate }}</div>
+                    <div
+                        class="alice text-5xl sm:text-7xl border-e-2 border-e-rustic-gold border-s-2 border-s-rustic-gold px-2 w-[120px] text-center tracking-widest">
+                        18</div>
+                    <div class="alice flex flex-col text-xl sm:text-2xl w-[120px] text-start">
+                        <div class="tracking-widest">{{ "ceremony.dates.time" | translate }}</div>
+                        <div class="tracking-widest">{{ "ceremony.dates.locale_time" | translate }}</div>
+                    </div>
+                </div>
+                <div class="alice text-3xl tracking-widest">2024</div>
+            </div>
+
+            <div class="flex items-center flex-col alice pt-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="text-xl font-bold">{{ "ceremony.ceremony" | translate }}</div>
+                <div class="text-lg">{{ "ceremony.ceremony_time" | translate }}</div>
+            </div>
+
+            <div class="flex items-center flex-col alice pt-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="text-xl font-bold">{{ "ceremony.sip_and_socialize" | translate }}</div>
+                <div class="text-lg">{{ "ceremony.sip_and_socialize_time" | translate }}</div>
+            </div>
+
+            <div class="flex items-center flex-col alice pt-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="text-xl font-bold">{{ "ceremony.wedding_reception" | translate }}</div>
+                <div class="text-lg">{{ 'ceremony.wedding_reception_time' | translate }}</div>
+            </div>
+
+            <div class="flex items-center flex-col alice pt-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="flex flex-row items-center text-lg font-thin">
+                    <img class="h-8 w-8" src="assets/images/pin-location.png" />
+                    <div>Geo Open Space Bali</div>
+                </div>
+                <a href="https://maps.app.goo.gl/jEJMa88BHjiESwdz6" target="_blank"
+                    class="bg-rustic-gold text-white px-4 py-2 text-sm font-thin mt-4 rounded-sm">Google Maps</a>
+            </div>
+
+            <div class="flex items-center flex-col alice pt-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="flex flex-row items-center text-lg font-thin">
+                    <img class="h-12 w-12" src="assets/images/dress-code.png" />
+                    <div>{{ "ceremony.outfit_theme" | translate }}</div>
+                </div>
+                <div class="flex gap-4 items-center">
+                    <div class="h-8 w-8 bg-rustic-green rounded-full"></div>
+                    <div class="h-8 w-8 bg-rustic-pink rounded-full"></div>
+                    <div class="h-8 w-8 bg-rustic-brown rounded-full"></div>
+                    <div class="h-8 w-8 bg-rustic-gray rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galleries" class=" px-4 py-10 bg-no-repeat bg-cover text-rustic-gold">
+        <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+            <h3 class="alice text-3xl font-bold">Moments</h3>
+        </div>
+
+        <div class="px-1 sm:px-32 md:px-40 lg:px-52" data-aos="fade-up" data-aos-duration="1000">
+            <div id="default-carousel" class="relative w-full py-4" data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative h-[300px] overflow-hidden rounded-lg md:h-[600px]">
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item *ngFor="let gallery of galleries">
+                        <img [src]="gallery.url"
+                            class="absolute block w-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            alt="...">
+                    </div>
+                </div>
+                <!-- Slider controls -->
+                <button type="button"
+                    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 1 1 5l4 4" />
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button"
+                    class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 9 4-4-4-4" />
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="registry" class=" px-4 py-10 bg-no-repeat bg-cover text-rustic-gold">
+        <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+            <h3 class="alice text-3xl font-bold">{{ "registry.title" | translate }}</h3>
+        </div>
+
+
+        <div class="container mx-auto text-center py-10" data-aos="fade-up" data-aos-duration="1000">
+            <p class="alice">{{ "registry.caption_1" | translate }}</p>
+            <p class="alice">{{ "registry.caption_2" | translate }}</p>
+        </div>
+
+        <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+            <button class="p-2 text-sm alice bg-rustic-gold rounded-sm text-white" (click)="openBankAccountModal()">
+                {{ "registry.view_btn" | translate }}
+            </button>
+        </div>
+
+    </section>
+
+
+    <section id="rsvp" class=" px-4 py-10 bg-no-repeat bg-cover text-rustic-gold">
+
+        <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+            <h3 class="alice text-3xl font-bold">{{ "rsvp.title" | translate }}</h3>
+        </div>
+
+        <div class="container mx-auto bg-white bg-opacity-50 my-10 p-10 rounded-md flex flex-col" data-aos="fade-up" data-aos-duration="1000">
+            <form class="alice font-extralight" [formGroup]="rsvpForm" (ngSubmit)="sendAnswer()">
+                <div class="mb-4" data-aos="fade-up" data-aos-duration="1000">
+                    <label for="name" class="block m-1 text-sm">{{ "rsvp.q_1" | translate}}</label>
+                    <input type="text" id="name" formControlName="name"
+                        class="bg-gray-50 border border-gray-300 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        [readonly]="recipient_name ? true : false">
+                </div>
+                <div class="mb-4" data-aos="fade-up" data-aos-duration="1000">
+                    <label for="att_confirm" class="block m-1 text-sm">{{ "rsvp.q_2" | translate }}</label>
+                    <select id="att_confirm" formControlName="is_attend"
+                        class="bg-gray-50 border border-gray-300 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="1">{{ "rsvp.option_1" | translate }}</option>
+                        <option value="0">{{ "rsvp.option_2" | translate }}</option>
+                    </select>
+                </div>
+                <div class="mb-4" data-aos="fade-up" data-aos-duration="1000">
+                    <label for="companions" class="block m-1 text-sm">{{ "rsvp.q_3" | translate }}</label>
+                    <textarea rows="4" type="text" id="companions" formControlName="companions"
+                        placeholder="Ex : Eren Yeager, Levi Ackerman"
+                        class="bg-gray-50 border border-gray-300 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+                </div>
+
+                <div class="mb-4" data-aos="fade-up" data-aos-duration="1000">
+                    <label for="comment" class="block m-1 text-sm">{{ "rsvp.q_4" | translate }}</label>
+                    <textarea rows="4" type="text" id="comment" formControlName="comment"
+                        class="bg-gray-50 border border-gray-300 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+                </div>
+
+                <button data-aos="fade-up" data-aos-duration="1000" type="submit" class="bg-rustic-gold text-white p-2 text-sm mx-auto block disabled:bg-opacity-35"
+                    [disabled]="rsvpForm.invalid || loader.isLoading.value">{{ "rsvp.save_btn" | translate }}</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="qna" class=" px-4 py-10 bg-no-repeat bg-cover text-rustic-gold">
+
+        <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+            <h3 class="alice text-3xl font-bold">{{ "qna.title" | translate }}</h3>
+            <p class="alice">{{ "qna.subtitle" | translate }}</p>
+        </div>
+
+        <div class="py-10 flex flex-col gap-5 alice container mx-auto" data-aos="fade-up" data-aos-duration="1000">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <div class="text-xl font-black">{{ "qna.question_1" | translate}}</div>
+                <div class="text-md mt-2">{{ "qna.answer_1" | translate}}</div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <div class="text-xl font-black">{{ "qna.question_2" | translate}}</div>
+                <div class="text-md mt-2">{{ "qna.answer_2" | translate}}</div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <div class="text-xl font-black">{{ "qna.question_3" | translate}}</div>
+                <div class="text-md mt-2">{{ "qna.answer_3" | translate}}</div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <div class="text-xl font-black">{{ "qna.question_4" | translate}}</div>
+                <div class="text-md mt-2">{{ "qna.answer_4" | translate}}</div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <div class="text-xl font-black">{{ "qna.question_5" | translate}}</div>
+                <div class="text-md mt-2">{{ "qna.answer_5" | translate}}</div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <div class="text-xl font-black">{{ "qna.question_6" | translate}}</div>
+                <div class="text-md mt-2">{{ "qna.answer_6" | translate}}</div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <div class="text-xl font-black">{{ "qna.question_7" | translate}}</div>
+                <div class="text-md mt-2">{{ "qna.answer_7" | translate}}</div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <div class="text-xl font-black">{{ "qna.question_8" | translate}}</div>
+                <div class="text-md mt-2">{{ "qna.answer_8" | translate}}</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wishes" class=" px-4 py-10 bg-no-repeat bg-cover text-rustic-gold">
+        <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+            <h3 class="alice text-3xl font-bold">{{ "wishes.title" | translate }}</h3>
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="1000"
+            class="container my-4 mx-auto bg-white bg-opacity-50 p-10 rounded-md flex flex-col items-start min-h-[300px] max-h-[500px] overflow-y-auto">
+            <div class="text-center w-full text-gray-400" *ngIf="comments.length < 1">
+                - No Comments Yet -
+            </div>
+            <div class="flex flex-col alice mb-4" *ngFor="let comment of comments">
+                <div class="text-xl">{{ comment.guest ? comment.guest.name : 'Anonymous'}}</div>
+                <p class="text-sm">{{ comment.comment ? comment.comment : '-'}}</p>
+                <div class="text-xs">{{ convertDateTime(comment.updated_at) }}</div>
+            </div>
+        </div>
+
+        <div id="footer" class="container mx-auto mt-20 text-center alice">
+            <div class="text-sm">This digital invitation is designed by the groom and the bride, and developed by our
+                dearest friend, Triyoga Dibrata :) </div>
+            <div class="text-sm font-bold">Copyright &copy; 2024</div>
+            <div>Andre Ticoalu & Maria Yuana</div>
+        </div>
+    </section>
+</div>
+
+<!-- Modal Invitation Card -->
+<div id="invitation-card" tabindex="-1"
+    class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative w-full max-w-7xl max-h-full">
+        <!-- Modal content -->
+        <div
+            class="relative bg-[url('assets/images/bg.png')] bg-no-repeat bg-cover rounded-sm shadow p-4 text-rustic-gold">
+            <div class="container mx-auto flex flex-col items-center p-4">
+                <img class="h-36 w-36 mx-auto" src="assets/images/wed-logo.png" />
+                <div class="flex flex-col gap-1">
+                    <div class="alice text-lg">{{ "hero.wedding" | translate }}</div>
+                    <div class="flex flex-row items-center gap-2">
+                        <h1 class="text-5xl alta">Andre</h1>
+                        <span class="liana text-2xl">{{ "hero.and" | translate }}</span>
+                        <h1 class="text-5xl alta">Maria</h1>
+                    </div>
+                    <div class="text-center alice my-4">{{ "hero.dear" | translate }},</div>
+                    <div class="text-center alice text-3xl font-bold">{{ recipient_name ? recipient_name : "" }}</div>
+                    <div class="text-center alice text-base my-4">{{ "hero.you_are_invited" | translate }}</div>
+                    <button class="bg-rustic-gold p-2 text-white rounded-sm alice text-sm"
+                        (click)="closeModalInvitation()">{{ "hero.open_invitation" | translate }}</button>
+                </div>
             </div>
         </div>
     </div>
-</section>
-<section id="bible" class="min-h-[300px] bg-[url('assets/images/bg.png')] bg-no-repeat bg-center bg-cover flex justify-center items-center">
-    <div class="m-4 md:m-20 bg-white rounded-lg p-4">
-        <div class="text-center my-2">test</div>
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, molestias facilis laborum voluptates ut iure commodi molestiae, fuga eligendi blanditiis aperiam quia nobis modi sint quod recusandae at sapiente reprehenderit?</div>
-    </div>
-</section>
-<section id="ceremony" class="min-h-[300px] bg-[url('assets/images/bg.png')] bg-no-repeat bg-center bg-cover flex justify-center items-center">
-    <div class="m-4 md:m-20 bg-white rounded-lg p-4">
-        <div class="text-center my-2">test</div>
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, molestias facilis laborum voluptates ut iure commodi molestiae, fuga eligendi blanditiis aperiam quia nobis modi sint quod recusandae at sapiente reprehenderit?</div>
-    </div>
-</section>
+</div>
 
-<section id="moments" class="min-h-[300px] bg-[url('assets/images/bg.png')] bg-no-repeat bg-center bg-cover flex justify-center items-center">
-    <div class="m-4 md:m-20 bg-white rounded-lg p-4">
-        <div class="text-center my-2">test</div>
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, molestias facilis laborum voluptates ut iure commodi molestiae, fuga eligendi blanditiis aperiam quia nobis modi sint quod recusandae at sapiente reprehenderit?</div>
+<!-- Modal Bank Account -->
+<div id="bank-account" tabindex="-1" aria-hidden="true"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    Bank Account
+                </h3>
+                <button type="button" (click)="closeBankAccountModal()"
+                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="flex flex-col items-center p-4">
+                        <img class="h-5 w-auto" src="assets/images/bca-logo.png" />
+                        <div class="my-2 text-2xl alice mt-4">Andre E Ticoalu</div>
+                        <div class="w-full max-w-[16rem]">
+                            <div class="relative">
+                                <input id="bank-acc-1" type="text"
+                                    class="col-span-6 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-4"
+                                    value="0881001593" disabled readonly>
+                                <button (click)="copyClipboard('bank-acc-1')"
+                                    class="absolute end-2.5 top-1/2 -translate-y-1/2 text-gray-900 dark:text-gray-400 hover:bg-gray-100 rounded-lg py-2 px-2.5 inline-flex items-center justify-center bg-white border-gray-200 border">
+                                    <span id="bank-acc-1-default-message" class="inline-flex items-center">
+                                        <span class="text-xs font-semibold">Copy</span>
+                                    </span>
+                                    <span id="bank-acc-1-success-message" class="hidden inline-flex items-center">
+                                        <span class="text-xs font-semibold">Copied!</span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center p-4">
+                        <img class="h-5 w-auto" src="assets/images/mandiri-logo.png" />
+                        <div class="my-2 text-2xl alice mt-4">Maria Aprilia P I Yuana</div>
+                        <div class="w-full max-w-[16rem]">
+                            <div class="relative">
+                                <input id="bank-acc-2" type="text"
+                                    class="col-span-6 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-4"
+                                    value="1410011277860" disabled readonly>
+                                <button (click)="copyClipboard('bank-acc-2')"
+                                    class="absolute end-2.5 top-1/2 -translate-y-1/2 text-gray-900 dark:text-gray-400 hover:bg-gray-100 rounded-lg py-2 px-2.5 inline-flex items-center justify-center bg-white border-gray-200 border">
+                                    <span id="bank-acc-2-default-message" class="inline-flex items-center">
+                                        <span class="text-xs font-semibold">Copy</span>
+                                    </span>
+                                    <span id="bank-acc-2-success-message" class="hidden inline-flex items-center">
+                                        <span class="text-xs font-semibold">Copied!</span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
+</div>
 
-<section id="registry" class="min-h-[300px] bg-[url('assets/images/bg.png')] bg-no-repeat bg-center bg-cover flex justify-center items-center">
-    <div class="m-4 md:m-20 bg-white rounded-lg p-4">
-        <div class="text-center my-2">test</div>
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, molestias facilis laborum voluptates ut iure commodi molestiae, fuga eligendi blanditiis aperiam quia nobis modi sint quod recusandae at sapiente reprehenderit?</div>
-    </div>
-</section>
 
-<section id="rsvp" class="min-h-[300px] bg-[url('assets/images/bg.png')] bg-no-repeat bg-center bg-cover flex justify-center items-center">
-    <div class="m-4 md:m-20 bg-white rounded-lg p-4">
-        <div class="text-center my-2">test</div>
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, molestias facilis laborum voluptates ut iure commodi molestiae, fuga eligendi blanditiis aperiam quia nobis modi sint quod recusandae at sapiente reprehenderit?</div>
-    </div>
-</section>
-
-<section id="qna" class="min-h-[300px] bg-[url('assets/images/bg.png')] bg-no-repeat bg-center bg-cover flex justify-center items-center">
-    <div class="m-4 md:m-20 bg-white rounded-lg p-4">
-        <div class="text-center my-2">test</div>
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, molestias facilis laborum voluptates ut iure commodi molestiae, fuga eligendi blanditiis aperiam quia nobis modi sint quod recusandae at sapiente reprehenderit?</div>
-    </div>
-</section>
-
-<section id="wishes" class="min-h-[300px] bg-[url('assets/images/bg.png')] bg-no-repeat bg-center bg-cover flex justify-center items-center">
-    <div class="m-4 md:m-20 bg-white rounded-lg p-4">
-        <div class="text-center my-2">test</div>
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, molestias facilis laborum voluptates ut iure commodi molestiae, fuga eligendi blanditiis aperiam quia nobis modi sint quod recusandae at sapiente reprehenderit?</div>
-    </div>
-</section>
-<section id="footer" class="min-h-[300px] bg-[url('assets/images/bg.png')] bg-no-repeat bg-center bg-cover flex justify-center items-center">
-    <div class="text-center p-4 md:p-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quos quidem, architecto in corporis placeat, tempora quas incidunt libero omnis sequi nulla quam rem quibusdam laudantium animi ducimus facilis autem?</div>
-</section>
-
-<div class="fixed right-4 top-4 z-50">
-    <div class="flex gap-4">
-        <button (click)="switchLang('en')">en</button>
-        <button (click)="switchLang('id')">id</button>
+<div class="fixed top-4 right-4 z-50 text-xs">
+    <div class="flex gap-1">
+        <button class="mx-1" [ngClass]="{'bg-rustic-gold h-8 w-8 rounded-full text-white' : currentLang === 'id'}"
+            (click)="switchLang('id')">ID</button>
+        <button class="mx-1" [ngClass]="{'bg-rustic-gold h-8 w-8 rounded-full text-white' : currentLang === 'en'}"
+            (click)="switchLang('en')">EN</button>
     </div>
 </div>

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment';
+import { environment } from '@environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,6 @@ export class RequestsService {
   }
 
   reqDelete(endpoint: string, id : string) {
-    return this.http.delete(`${environment.api_url}`+endpoint+id).pipe();
+    return this.http.delete(`${environment.api_url}`+endpoint+"/"+id).pipe();
   }
 }

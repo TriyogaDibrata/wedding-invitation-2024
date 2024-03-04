@@ -1,3 +1,75 @@
 {
-    "title" : "this is an title"
+    "hero" : {
+        "wedding" : "The Wedding of",
+        "and" : "and",
+        "dear" : "Dear",
+        "you_are_invited": "You're invited!",
+        "open_invitation" : "Open Invitation",
+        "date" : "Saturday, May 18th 2024",
+        "save_the_date" : "Save the date",
+        "days" : "Days",
+        "hours" : "Hours",
+        "minutes" : "Minutes",
+        "seconds" : "Seconds",
+        "add_to_calendar" : "Add to Calendar"
+    },
+    "quotes" : {
+        "quotes" : "And over all these virtues put on love, which binds them all together in perfect unity.",
+        "bible" : "Colossians 3:14"
+    },
+    "ceremony" : {
+        "greetings" : "We are delighted to invite you to celebrate our joyous day as we embark on this beautiful journey of love and commitment.",
+        "dates" : {
+            "may" : "MAY",
+            "saturday" : "Saturday",
+            "time" : "AT 4 PM",
+            "locale_time" : "" 
+        },
+        "ceremony" : "Ceremony",
+        "ceremony_time" : "04.00 PM - 05.00 PM",
+        "sip_and_socialize" : "Sip and Socialize",
+        "sip_and_socialize_time" : "05.00 PM - 06.00 PM",
+        "wedding_reception" : "Wedding Reception",
+        "wedding_reception_time" : "06.00 PM - 09.00 PM",
+        "outfit_theme" : "Casual Rustic Theme Outfit"
+    },
+    "registry" : {
+        "title" : "Registry",
+        "caption_1" : "Your presence is the greatest gift of all, and we look forward to sharing this special day with you! However should you wish to honor us with a gift, due to our upcoming travel plans, cash gift in lieu of physical gifts would be greatly appreciated.",
+        "caption_2" : "A wishing well will be available at the reception. Alternatively, you also have the convenience of a cashless approach by wire transferring your gift to the bank account provided below.",
+        "view_btn" : "View Account Number"
+    },
+    "rsvp" : {
+        "title" : "RSVP",
+        "q_1" : "Your Name",
+        "q_2" : "Will you be able to join us at our wedding? Kindly reply by the date of 15 April 2024.",
+        "option_1" : "Joyfully Accept",
+        "option_2" : "Regretfully Decline",
+        "q_3" : "As we have a designated seating plan for our guests, if you plan on bringing your plus one or kid(s) with you, please kindly list their name(s) here. Separate their names by comma (,)",
+        "q_4" : "Share how you know the couple, wish them well or some wisdom for the future!",
+        "save_btn" : "Send your answer"
+    },
+    "qna" : {
+            "title" : "Q & A",
+            "subtitle" : "For all our friends and family who have lots of questions, please check out our Q & A first!",
+            "question_1" : "When is the RSVP deadline?",
+            "answer_1" : "Please RSVP by April 15th, so we can have an accurate headcount 😊.",
+            "question_2" : "Can I bring a date?",
+            "answer_2" : "We are excited to share our intimate wedding celebration with close friends and family. To ensure a cozy and personal atmosphere, we kindly request that only those whose names are on the invitation attend. If you would like to bring a guest, we would be delighted to accommodate them as well. Please let us know so that we can make the necessary arrangements. Thank you for understanding and being a part of our special day.",
+            "question_3" : "Where should I park?",
+            "answer_3" : "Free parking is provided near the entrance of the venue.",
+            "question_4" : "What should I wear?",
+            "answer_4" : "Our theme will be Casual Rustic. If you are not sure what to wear, try to google 'casual rustic theme outfit' for your reference. Colors like grey, sage green, dusty rose, or taupe will be preferable, but any pastel colors will work too!",
+            "question_5" : "Is the wedding indoors or outdoors?",
+            "answer_5" : "Both our wedding ceremony and reception are outdoors",
+            "question_6" : "What kind of shoes should/shouldn't I wear?",
+            "answer_6" : "Ladies, please leave your stiletto heels home. There are a bunch of grassy/dirt areas that you might have to walk in so wear chunky heels or sandals. Can't have any of you ruining nice shoes or breaking any ankles.",
+            "question_7" : "Is it okay to take pictures with our phones and cameras during the wedding?",
+            "answer_7" : "Yes! We would love for you to take photos and share them with friends and families with hashtag #JayYuanTeamUp. However, please refrain from taking photos during the ceremony.",
+            "question_8" : "Whom should I call with questions?",
+            "answer_8" : "Please call our lovely maid of honor Putri with question at +62857-9276-7459."
+    },
+    "wishes" : {
+        "title" : "Wishes"
+    }
 }

@@ -1,3 +1,75 @@
 {
-    "title" : "ini adalah judul"
+    "hero" : {
+        "wedding" : "Pernikahan",
+        "and" : "dan",
+        "dear" : "Untuk",
+        "you_are_invited": "Kamu diundang!",
+        "open_invitation" : "Buka Undangan",
+        "date" : "Sabtu, 18 Mei 2024",
+        "save_the_date" : "Simpan tanggal",
+        "days" : "Hari",
+        "hours" : "Jam",
+        "minutes" : "Menit",
+        "seconds" : "Detik",
+        "add_to_calendar" : "Tambahkan ke Kalender"
+    },
+    "quotes" : {
+        "quotes" : "Dan di atas semuanya itu: kenakanlah kasih, sebagai pengikat yang mempersatukan dan menyempurnakan.",
+        "bible" : "Kolose 3:14"
+    },
+    "ceremony" : {
+        "greetings" : "Kami mengundang anda untuk merayakan hari bahagia dimana kami memulai perjalanan indah ini dalam cinta dan komitmen.",
+        "dates" : {
+            "may" : "MEI",
+            "saturday" : "Sabtu",
+            "time" : "16.00",
+            "locale_time" : "WITA" 
+        },
+        "ceremony" : "Pemberkatan",
+        "ceremony_time" : "16.00 - 17.00",
+        "sip_and_socialize" : "Minuman dan Snack Pembuka",
+        "sip_and_socialize_time" : "17.00 - 18.00",
+        "wedding_reception" : "Resepsi Pernikahan",
+        "wedding_reception_time" : "18.00 - 21.00",
+        "outfit_theme" : "Tema Pakaian Casual Rustic"
+    },
+    "registry" : {
+        "title" : "Amplop Digital",
+        "caption_1" : "Kehadiran anda adalah hadiah terbesar bagi kami, dan kami berharap dapat berbagi hari istimewa ini bersama anda! Namun, jika anda ingin memberi hadiah sebagai tanda kasih, mengingat rencana perjalanan kami yang akan datang, anda dapat memberikan hadiah secara tunai saat acara resepsi, atau anda dapat mentransfernya melalui rekening berikut:",
+        "caption_2" : "",
+        "view_btn" : "Lihat No. Rekening"
+    },
+    "rsvp" : {
+        "title" : "Konfirmasi Kehadiran",
+        "q_1" : "Nama Anda",
+        "q_2" : "Apakah anda dapat menghadiri acara pernikahan kami? Mohon konfirmasi sebelum 15 April 2024.",
+        "option_1" : "Hadir dengan senang hati",
+        "option_2" : "Sayang sekali tidak bisa hadir",
+        "q_3" : "Karena tempat duduk untuk tamu akan kami tentukan sebelum acara, jika anda berencana membawa pasangan atau anak, mohon cantumkan nama mereka di sini. Pisahkan dengan koma(,)",
+        "q_4" : "Bagikan bagaimana anda mengenal kami, berikan ucapan selamat, atau berikan sedikit pesan untuk masa depan",
+        "save_btn" : "Kirim jawaban"
+    },
+    "qna" : {
+            "title" : "Q & A",
+            "subtitle" : "Bagi teman dan keluarga kami yang memiliki banyak pertanyaan, silakan cek Q & A kami terlebih dahulu.",
+            "question_1" : "Kapan batas waktu konfirmasi kehadiran?",
+            "answer_1" : "Harap konfirmasi sebelum tanggal 15 April, sehingga kami dapat memiliki perkiraan jumlah tamu yang akurat 😊.",
+            "question_2" : "Bolehkah saya membawa pasangan?",
+            "answer_2" : "Kami ingin merayakan pernikahan kami dengan teman dekat dan keluarga. Untuk menjaga keintiman acara, akan lebih baik jika hanya nama yang tercantum di undangan saja yang hadir. Jika anda ingin membawa teman atau pasangan, kami akan berusaha semaksimal mungkin untuk dapat mengakomodasi mereka. Mohon beri tahu kami sehingga kami dapat menyesuaikan tempat duduk dan hal lainnya. Terima kasih atas pengertian dan kehadiran anda dalam hari istimewa kami.",
+            "question_3" : "Di mana saya bisa parkir?",
+            "answer_3" : "Parkir gratis disediakan di dekat pintu masuk lokasi.",
+            "question_4" : "Apa yang sebaiknya saya kenakan?",
+            "answer_4" : "Jika Anda tidak yakin apa yang harus dikenakan, cobalah mencari pakaian tema kasual rustik' untuk referensi Anda. Warna sepertiabu-abu, hijau sage, dusty rose, atau taupe akan diutamakan, tetapi warna pastel lainnya juga akan cocok!",
+            "question_5" : "Apakah pernikahan dilaksanakan di dalam atau di luar ruangan?",
+            "answer_5" : "Pemberkatan pernikahan dan resepsi kami akan dilaksanakan di luar ruangan.",
+            "question_6" : "Sepatu seperti apa yang boleh/tidak boleh saya kenakan?",
+            "answer_6" : "Ladies, harap untuk tidak memakai sepatu stiletto atau hak tinggi lancip. Ada beberapa area berumput/tanah yang mungkin harus anda lalui, jadi kenakan sepatu hak tebal (wedges) atau sepatu tanpa hak. Kami tidak ingin sepatu hak tinggi anda rusak.",
+            "question_7" : "Bolehkah mengambil foto dengan ponsel dan kamera selama pernikahan?",
+            "answer_7" : "Boleh dong! Kami senang jika anda mengambil foto dan berbagi dengan teman dan keluarga dengan hashtag #JayYuanTeamUp. Namun, mohon hindari mengambil foto selama pemberkatan.",
+            "question_8" : "Siapa saya harus menghubungi jika ada pertanyaan?",
+            "answer_8" : "Silakan hubungi adik sekaligus asisten kami yang cantik, Putri, di +62857-9276-7459."
+    },
+    "wishes" : {
+        "title" : "Ucapan"
+    }
 }

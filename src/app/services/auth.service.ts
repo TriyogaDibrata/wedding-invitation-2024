@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { User } from '../interfaces/user';
+import { User } from '@interfaces/user';
 import { Observable } from 'rxjs';
 import { RequestsService } from './requests.service';
 import { map } from 'rxjs';
-import { ApiResponse } from '../interfaces/api-response';
+import { ApiResponse } from '@interfaces/api-response';
 
 @Injectable({
   providedIn: 'root'
@@ -38,8 +38,24 @@ export class AuthService {
     );
   }
 
+  logout() {
+    return this.requestService.reqPost('logout', {}).pipe(
+      map((res : ApiResponse) => {
+        if(res && res.success) {
+          this.removeUserData();
+        }
+        return res;
+      }),
+    );
+  }
+
   storeUserData(data) {
     localStorage.setItem('user', JSON.stringify(data));
     this.userSubject.next(data);
+  }
+
+  removeUserData() {
+    localStorage.removeItem('user');
+    this.userSubject.next(null);
   }
 }
