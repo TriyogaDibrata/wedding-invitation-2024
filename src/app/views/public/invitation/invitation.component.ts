@@ -126,9 +126,9 @@ export class InvitationComponent implements OnInit{
   ngAfterViewInit() : void {
     AOS.init();
     this.guest_id = this.route.snapshot.paramMap.get('id');
-    if(this.guest_id) {
-      this.getGuestDetail(this.guest_id);
-    }
+    // if(this.guest_id) {
+    //   this.getGuestDetail(this.guest_id);
+    // }
     this.route.queryParams.subscribe((params) => {
       this.recipient_name = params['to'];
     });

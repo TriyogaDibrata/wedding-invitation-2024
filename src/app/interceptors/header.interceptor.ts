@@ -36,11 +36,11 @@ export class HeaderInterceptor implements HttpInterceptor {
 
     return next.handle(request).pipe(
       catchError((err: HttpErrorResponse) => {
-        this.alert.showToast('error', err.error.message);
         if(err.status === 401 || 403) {
           this.authService.removeUserData();
           this.router.navigateByUrl('/auth');
         }
+        this.alert.showToast('error', err.error.message);
         return throwError(() => err);
       }),
       finalize(() => {
